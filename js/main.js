@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 
    // ------------------- GET data with Ajax ----------------------
+   /*
     var METHOD = "GET";
     var URL = "https://jsonplaceholder.typicode.com/users";
 
@@ -27,6 +28,29 @@ $(document).ready(function() {
             console.log(data);
         }
     })
+    */
+
+
+
+
+
+       // ------------------- POST data with Ajax ----------------------
+       var METHOD = "POST";
+       var URL = "https://jsonplaceholder.typicode.com/users";
+       var DB = JSON.stringify({name:"francis", lastname:"jones"});
+   
+       $.ajax(URL, {
+           method:METHOD,
+           data:DB,
+           dataType:"json",
+           contentType:"application/json",
+           error: function() {
+               console.log('Something went wrong !');
+           },
+           success: function(data) {
+               console.log(data);
+           }
+       })
 
 
 
